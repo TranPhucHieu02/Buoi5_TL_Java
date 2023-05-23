@@ -7,7 +7,6 @@
 </head>
 <body>
 	<div layout:fragment="content" class="container body-content">
-		ư
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -22,7 +21,7 @@
 				<tr th:each="product : ${listProduct}">
 					<th scope="row" th:text="${product.id}"></th>
 					<td th:text="${product.name}"></td>
-					<td ><img width="200" height="150" th:src="@{product.image}"></td>
+					<td ><img width="200" height="150" th:src="@{${product.image}}"></td>
 					<td th:text="${product.price}"></td>
 					<td><a th:href="@{/products/edit/{id}(id=${product.id})}"
 						custom:linkMethod="post" class="btn btn-secondary">Edit</a> <a
